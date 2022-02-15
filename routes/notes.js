@@ -17,7 +17,7 @@ notes.post('/', (req, res) => {
         const newNote = {
             title,
             text,
-            note_id: uuid(),
+            id: uuid(),
         };
 
         readAndAppend(newNote, require('path').resolve(__dirname, '../db/db.json'));
@@ -27,13 +27,14 @@ notes.post('/', (req, res) => {
     }
 });
 
-notes.delete('/:note_id', (req, res) => {
+notes.delete('/:id', (req, res) => {
     console.info(`${req.method} request received to delete a note`);
-    const noteId = req.params.note_id;
+    console.log(req.params)
+    const noteId = req.params.id;
     readFromFile(require('path').resolve(__dirname, '../db/db.json'))
     .then((data) => JSON.parse(data))
     .then((json) => {
-      const result = json.filter((note) => note.note_id !== noteId);
+      const result = json.filter((note) => note.id !== noteId);
       writeToFile(require('path').resolve(__dirname, '../db/db.json'), result);
       res.json(`Item ${noteId} has been deleted 🗑️`);
     });
