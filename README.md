@@ -1,6 +1,6 @@
-# README generator
+# Notetaker
 
-Title: README generator
+Title: Notetaker
 
 Developer: Francis Bond
 
