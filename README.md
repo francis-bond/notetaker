@@ -20,6 +20,8 @@ Built with: Javascript, npm fs, Heroku,
 
 This application is run on Heroku and enables a user to write, save and delete notes through the server. 
 
+Deployed project link : https://fb-notetaker.herokuapp.com/
+
 ## Development
 
 Completing this assingment required me to follow the flow of information closely. Creating routes that took the proper information and manipulated it was key.
